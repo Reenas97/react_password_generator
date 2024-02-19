@@ -8,6 +8,8 @@ export default function App() {
 
   let [generatedPassword, setGeneratedPassword] = useState("")
 
+  const [changePasswordSize, setChangePasswordSize] = useState(12)
+
   function generatePassword(){
 
     const lowercaseLetters = 'abcdefghijklmnopqrstuwxyz'
@@ -19,7 +21,7 @@ export default function App() {
 
     let password = ''
 
-    for (let i = 0; i < 12; i++){
+    for (let i = 0; i < changePasswordSize; i++){
       password += passwordCharacters.charAt(Math.floor(Math.random() * passwordCharacters.length))
     }
 
@@ -36,6 +38,17 @@ export default function App() {
   return (
     <div className="app">
       <h1>Gerador de senhas</h1>
+      <div className="app__input">
+        <label htmlFor="changePasswordSize">Tamanho da senha:</label>
+        <input 
+          type="number"
+          id="changePasswordSize"
+          min={1}
+          value= {changePasswordSize}
+          onChange={(ev) => setChangePasswordSize(ev.target.value)}
+
+        />
+      </div>
       <div className="buttonsContainer">
         <Button
           buttonName = "Gerar!"
