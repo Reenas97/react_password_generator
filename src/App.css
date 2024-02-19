@@ -1,0 +1,18 @@
+.app h1{
+    color: #e3e3e3;
+    text-align: center;
+}
+
+.buttonsContainer{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+p{
+    color: #e3e3e3;
+    text-align: center;
+    margin-top: 15px;
+}
